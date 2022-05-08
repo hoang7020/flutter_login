@@ -21,6 +21,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
       print("Login Get Token");
       final token = await userRepository.authenticate(username: event.username, password: event.password);
+      print(token);
 
       print("Login Initial");
       emitter(LoginInitial());
